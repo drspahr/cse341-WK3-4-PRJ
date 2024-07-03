@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Rectifiers API",
+    "title": "Contacts API",
     "description": "Contacts API",
     "version": "1.0.0"
   },
@@ -21,6 +21,16 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
@@ -77,6 +87,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -153,10 +166,16 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
           }
         }
       },
       "delete": {
+        "tags": [
+          "Rectifier-Info"
+        ],
         "description": "",
         "parameters": [
           {
@@ -176,7 +195,7 @@
         }
       }
     },
-    "/rectifiers/inpsect": {
+    "/rectifiers/inspect": {
       "get": {
         "tags": [
           "Rectifier-Inspection"
@@ -185,6 +204,55 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Rectifier-Inspection"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "facilityId": {
+                  "example": "any"
+                },
+                "mdcVolts": {
+                  "example": "any"
+                },
+                "mdcAmps": {
+                  "example": "any"
+                },
+                "tapSet": {
+                  "example": "any"
+                },
+                "inspectionDate": {
+                  "example": "any"
+                },
+                "comments": {
+                  "example": "any"
+                },
+                "technician": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -233,74 +301,10 @@
                 "facilityId": {
                   "example": "any"
                 },
-                "manufacturer": {
+                "mdcVolts": {
                   "example": "any"
                 },
-                "model": {
-                  "example": "any"
-                },
-                "serialNumber": {
-                  "example": "any"
-                },
-                "dcVolts": {
-                  "example": "any"
-                },
-                "dcAmps": {
-                  "example": "any"
-                },
-                "tapSet": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      },
-      "delete": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/rectifiers/inspect": {
-      "post": {
-        "tags": [
-          "Rectifier-Inspection"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "facilityId": {
-                  "example": "any"
-                },
-                "dcVolts": {
-                  "example": "any"
-                },
-                "dcAmps": {
+                "mdcAmps": {
                   "example": "any"
                 },
                 "tapSet": {
@@ -317,6 +321,28 @@
                 }
               }
             }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rectifier-Inspection"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
