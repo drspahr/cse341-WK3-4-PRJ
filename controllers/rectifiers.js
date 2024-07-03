@@ -71,7 +71,7 @@ const updateRectifierInfo = async (req, res) => {
 
 // DELETE RECTIFIER IN INFO COLLECTION
 const delecteRectifierInfo = async (req, res) => {
-    //#swager.tags=['Rectifier-Info']
+    //#swagger.tags=['Rectifier-Info']
     const rectId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('Information').deleteOne({_id: rectId});
     if (response.deletedCount > 0) {
@@ -149,7 +149,7 @@ const updateRectifierInspection = async (req, res) => {
 
 // DELETE INSPECTION RECORD IN INSPECTION COLLECTION
 const deleteRectifierInspection = async (req, res) => {
-    //#swager.tags=['Rectifier-Inspection']
+    //#swagger.tags=['Rectifier-Inspection']
     const rectId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('Inspections').deleteOne({_id: rectId});
     if (response.deletedCount > 0) {

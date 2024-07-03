@@ -124,6 +124,10 @@ content-type: application/json
 ### DELETE INFORMATION RECORD
 DELETE https://cse341-wk3-4-prj.onrender.com/rectifiers/info/ HTTP/1.1
 
+//
+// INSPECTION COLLECTION
+//
+
 ### GET ALL INSPECTION RECORDS
 GET https://cse341-wk3-4-prj.onrender.com/rectifiers/inspect
 
@@ -144,7 +148,7 @@ content-type: application/json
     "tapSet": "Course-3 - Fine-6"
 }
 
-### UPDATE INFORMATION RECORD
+### UPDATE INSPECTION RECORD
 PUT https://cse341-wk3-4-prj.onrender.com/rectifiers/inspect/6680c6af46efc9c7a6accb63 HTTP/1.1
 content-type: application/json
 
@@ -158,6 +162,6 @@ content-type: application/json
     "tapSet": "Course-3 - Fine-6"
 }
 
-### DELETE INFORMATION RECORD
+### DELETE INSPECTION RECORD
 DELETE https://cse341-wk3-4-prj.onrender.com/rectifiers/inspect/ HTTP/1.1
 
