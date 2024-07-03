@@ -7,13 +7,13 @@ const saveRectifierInfoValidate = (req, res, next) => {
         manufacturer: "required|string",
         model: "required|string",
         serialNumber: "required|string",
-        dcVolts: "required|float",
-        dcAmps: "required|float",
+        dcVolts: "required|numeric",
+        dcAmps: "required|numeric",
         tapSet: "required|string",
     };
     validate(req.body, validateRule, {}, (err, status) => {
         if (!status) {
-            res.status(412).sent({
+            res.status(412).send({
                 success: false,
                 message: 'Validation failed',
                 data: err
@@ -28,8 +28,8 @@ const saveRectifierInfoValidate = (req, res, next) => {
 const saveRectifierInspecValidate = (req, res, next) => {
     const validateRule = {
         facilityId: "required|string",
-        mdcVolts: "required|float",
-        mdcAmps: "required|float",
+        mdcVolts: "required|numeric",
+        mdcAmps: "required|numeric",
         tapSet: "required|string",
         inspectionDate: "required|date",
         comments: "required|string",
@@ -37,7 +37,7 @@ const saveRectifierInspecValidate = (req, res, next) => {
     };
     validate(req.body, validateRule, {}, (err, status) => {
         if (!status) {
-            res.status(412).sent({
+            res.status(412).send({
                 success: false,
                 message: 'Validation failed',
                 data: err
