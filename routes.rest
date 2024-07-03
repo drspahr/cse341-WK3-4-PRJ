@@ -1,0 +1,80 @@
+// LOCALHOST
+// INFORMATION COLLECTION
+
+### GET ALL INFORMATION RECORDS IN INFORMATION COLLECTION
+GET http://localhost:3000/rectifiers/info
+
+### GET ONE RECORD FROM INFORMATION COLLECTION
+GET http://localhost:3000/rectifiers/info/
+
+### POST NEW RECORD TO INFORMATION COLLECTION
+POST http://localhost:3000/rectifiers/info HTTP/1.1
+content-type: application/json
+
+{
+    "facilityId": "REC_SYS01_1002",
+    "manufacturer": "Universal Rectifiers",
+    "model": "ASAI",
+    "serialNumber": "1302047",
+    "dcVolts": 60,
+    "dcAmps": 40, 
+    "tapSet": "Course-3 - Fine-6"
+}
+
+### UPDATE RECORD IN INFORMATION COLLECTION
+PUT http://localhost:3000/rectifiers/info/66806186550efb88c0fbc060 HTTP/1.1
+content-type: application/json
+
+{
+    "facilityId": "REC_SYS01_1001",
+    "manufacturer": "Universal Rectifiers",
+    "model": "ASAI",
+    "serialNumber": "2404769",
+    "dcVolts": 50,
+    "dcAmps": 50, 
+    "tapSet": "Course-6 - Fine-6"
+}
+
+### DELETE RECORD IN INFORMATION COLLECTION
+DELETE http://localhost:3000/rectifiers/info/668061f3550efb88c0fbc061 HTTP/1.1
+
+// INSPECTION COLLECTION
+
+### GET ALL INSPECTION RECORDS IN INSPECITONS COLLECTION
+GET http://localhost:3000/rectifiers/inspect
+
+### GET ONE INSPECTION RECORD FROM INSPECTIONS COLLECTION
+GET http://localhost:3000/rectifiers/inspect/
+
+### POST NEW INSPECTION RECORD TO INSPECTIONS COLLECTION
+POST http://localhost:3000/rectifiers/inspect HTTP/1.1
+content-type: application/json
+
+{
+    "facilityId": "REC_SYS01_1002",
+    "mdcVolts": 15,
+    "mdcAmps": 22, 
+    "tapSet": "C2F4",
+    "inspectionDate": "01/15/2024",
+    "comments": "Anodes beginning to deplete",
+    "technician": "David Spahr"
+}
+
+### UPDATE INSPECTION RECORD
+PUT http://localhost:3000/rectifiers/inspect/6680c6af46efc9c7a6accb63 HTTP/1.1
+content-type: application/json
+
+{
+    "facilityId": "REC_SYS01_1000",
+    "mdcVolts": 9.78,
+    "mdcAmps": 30.5, 
+    "tapSet": "C1F3",
+    "inspectionDate": "01/15/2024",
+    "comments": "Rectifier in good shape, has desired output",
+    "technician": "David Spahr"
+}
+
+### DELETE INPSECTION RECORD
+DELETE http://localhost:3000/rectifiers/inspect/ HTTP/1.1
+
+// RENDER SECTION
