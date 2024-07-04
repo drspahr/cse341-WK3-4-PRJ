@@ -139,13 +139,13 @@ POST https://cse341-wk3-4-prj.onrender.com/rectifiers/inspect HTTP/1.1
 content-type: application/json
 
 {
-    "facilityId": "REC_SYS01_1004",
-    "manufacturer": "Universal Rectifiers",
-    "model": "ASAI",
-    "serialNumber": "1302153",
-    "dcVolts": 60,
-    "dcAmps": 40, 
-    "tapSet": "Course-3 - Fine-6"
+    "facilityId": "DELETE",
+    "mdcVolts": 20.4,
+    "mdcAmps": 30.3,
+    "tapSet": "C2F3",
+    "inspectionDate": "06/28/2024",
+    "comments": "Rectifier in good conditon",
+    "technician": "David Spahr"
 }
 
 ### UPDATE INSPECTION RECORD
@@ -153,15 +153,15 @@ PUT https://cse341-wk3-4-prj.onrender.com/rectifiers/inspect/6680c6af46efc9c7a6a
 content-type: application/json
 
 {
-    "facilityId": "REC_SYS01_1002",
-    "manufacturer": "Universal Rectifiers",
-    "model": "ASAI",
-    "serialNumber": "1302047",
-    "dcVolts": 60,
-    "dcAmps": 40, 
-    "tapSet": "Course-3 - Fine-6"
+    "facilityId": "DELETE",
+    "mdcVolts": 20.4,
+    "mdcAmps": 30.3,
+    "tapSet": "C2F3",
+    "inspectionDate": "07/01/2024",
+    "comments": "Pole needs to be replaced",
+    "technician": "David Spahr"
 }
 
 ### DELETE INSPECTION RECORD
-DELETE https://cse341-wk3-4-prj.onrender.com/rectifiers/inspect/ HTTP/1.1
+DELETE https://cse341-wk3-4-prj.onrender.com/rectifiers/inspect/6686c16e5f68beeb69934c4e HTTP/1.1
 
